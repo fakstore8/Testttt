@@ -1,0 +1,92 @@
+/* style.css */
+
+/* --- Variabel Warna Kustom untuk konsistensi --- */
+:root {
+    --primary-color: #6366f1; /* Indigo-500 */
+    --destructive-color: #ef4444; /* Red-500 */
+    --muted-bg: #f3f4f6; /* Gray-100 */
+    --border-color: #e5e7eb; /* Gray-200 */
+    --background-color: #f8f8f8; /* Custom Light Background */
+}
+
+/* --- Styling Dasar dan Utility --- */
+.bg-custom { 
+    background-color: var(--background-color); 
+}
+.min-h-screen { 
+    min-height: 100vh; 
+}
+
+/* --- Gradient (Menggantikan gradient-primary) --- */
+.gradient-primary {
+    background: linear-gradient(90deg, var(--primary-color), #8b5cf6);
+    color: white;
+    border: none;
+}
+.gradient-primary:hover:not(:disabled) {
+    opacity: 0.9;
+}
+.gradient-text {
+    background-image: linear-gradient(90deg, var(--primary-color), #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.text-primary {
+    color: var(--primary-color);
+}
+
+/* --- Glass Card (Menggantikan glass-card) --- */
+.glass-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* --- Toast Notification --- */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.toast {
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+.toast-success { 
+    background-color: #e6ffed; 
+    border: 1px solid #38a169; 
+    color: #38a169; 
+}
+.toast-destructive { 
+    background-color: #fee2e2; 
+    border: 1px solid var(--destructive-color); 
+    color: var(--destructive-color); 
+}
+
+/* --- Utility Tambahan --- */
+.bg-muted\/50 {
+    background-color: rgba(243, 244, 246, 0.5); /* Menggantikan bg-muted/50 */
+}
+.border-border {
+    border-color: var(--border-color); /* Menggantikan border-border */
+}
+.text-destructive {
+    color: var(--destructive-color);
+}
+.text-muted-foreground {
+    color: #6b7280; /* Gray-500 */
+}
+.bg-primary\/10 {
+    background-color: rgba(99, 102, 241, 0.1);
+}
